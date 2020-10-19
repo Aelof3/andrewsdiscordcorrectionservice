@@ -1,0 +1,29 @@
+{
+    "name": "Andrew's Marvelous Discord Correction Service",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Superficially changes all instances of 'g' to 'j' in all discord messages",
+    "homepage_url": "http://google.com",
+    "content_scripts": [
+      {
+        "matches": ["http://discord.com/channels/*/*", "https://discord.com/channels/*/*"],
+        "js": ["inject.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "background": {
+      "scripts": [
+        "background.js"
+      ],
+      "persistent": true
+    },
+    "browser_action": {
+      "default_title": "Inject!"
+    },
+    "permissions": [
+      "https://*/*",
+      "http://*/*",
+      "activeTab",
+      "tabs"
+    ]
+  }
